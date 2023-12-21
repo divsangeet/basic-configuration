@@ -1,0 +1,19 @@
+=> List the Network Interfaces
+
+# nmcli device 
+
+=> Create network connection with a name test, ipv4 address 192.168.1.5. DNS - 8.8.8.8, and gateway 8.8.8.8
+
+# nmcli conn add con-name test ifname ens3/eth0 type ethernet ipv4.address 192.168.1.5/24 ipv4.dns 8.8.8.8 ipv4.gateway 192.168.1.1 autoconnect yes ipv4.method manual
+
+=> Activate the connection
+
+# nmcli conn up test
+
+=> Alternatively, create a network connection with automatic ip assignment/
+
+# nmcli conn add con-name test1 ifname ens3 type ethernet
+
+=> Activate the connection
+
+# nmcli conn up test1
